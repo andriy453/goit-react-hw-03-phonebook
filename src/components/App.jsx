@@ -47,18 +47,21 @@ class App extends Component {
     }));
   };
 
-  componentDidMount() {
-    const contacts = JSON.parse(localStorage.getItem('contacts'));
-    if (contacts) {
-      this.setState({ contacts });
-    }
+  componentDidMount () {
+    if(this.state.contacts){
+      this.setState({
+        contacts: JSON.parse( localStorage.getItem('contacts'))
+      })
+    } 
+  
   }
+  componentDidUpdate (prevProps, prevState){
+  if(this.state.contacts !== prevState.contacts){
+    localStorage.setItem('contacts',JSON.stringify(this.state.contacts ))
+  }
+  }
+ 
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.contacts !== this.state.contacts) {
-      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
-    }
-  }
   render() {
     const { contacts, filter } =this.state;
       const NomrmalizeFilter = filter.toLowerCase();
