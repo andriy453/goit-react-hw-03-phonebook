@@ -6,7 +6,7 @@ import Filter from './Filter/Filter';
 import Container from './Conteiner/Conteiner';
 
 class App extends Component {
-  state = {
+   state = {
     contacts: [  ],
     filter: '',
   };
