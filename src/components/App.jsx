@@ -7,9 +7,7 @@ import Container from './Conteiner/Conteiner';
 
 class App extends Component {
   state = {
-    contacts: [
-
-    ],
+    contacts: [],
     filter: '',
   };
   formSabmitHendler = ({ name, number }) => {
@@ -21,13 +19,10 @@ class App extends Component {
 
     const { contacts } = this.state;
 
-    if (
-      contacts.find(
-        contact => contact.name.toLowerCase() === name.toLowerCase()
-      )
+     if ( contacts?.find(contact => contact.name.toLowerCase() === name.toLowerCase())
     ) {
       alert(`${name} is already in contacts.`);
-    } else if (contacts.find(contact => contact.number === number)) {
+    } else if ( contacts?.find(contact => contact.number === number)) {
       alert(`${number} is already in contacts.`);
     } else {
       this.setState(({ contacts }) => ({
