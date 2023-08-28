@@ -24,11 +24,14 @@ class App extends Component {
       alert(`${name} is already in contacts.`);
     } else if ( contacts?.find(contact => contact.number === number)) {
       alert(`${number} is already in contacts.`);
-    } else {
+    } else if (contacts !==null) {
       this.setState(({ contacts }) => ({
         contacts: [contact, ...contacts],
       }));
-    }
+    }else{
+      this.setState(({ contacts }) => ({
+        contacts: [contact],
+      }))}
   };
 
   ChangeFilter = e => {
