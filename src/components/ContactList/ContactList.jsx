@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import '../../components/ContactList/ContactList.css';
 
-const ContactList = ({ contacts  = '', OnDelite }) => {
+const ContactList = ({ contacts, OnDelite }) => {
       return (
         <ul className="contact_list">
           { contacts &&  contacts.map(({ id, name, number }) => {
