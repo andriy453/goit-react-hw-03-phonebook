@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { Component } from 'react';
-import '../../components/ContactForm/ContactForm.css';
+import css from   '../../components/ContactForm/ContactForm.module.css';
 
 class ContactForm extends Component {
   state = {
@@ -26,12 +26,12 @@ class ContactForm extends Component {
   };
   render() {
     return (
-      <div>
+     <div>
         <form onSubmit={this.hendleSabmit}>
-          <label className="lable">
+          <label className={css.label}>
             Name
             <input
-              className="contact-inp"
+              className={css.contact_inp}
               onChange={this.hendelChange}
               value={this.state.name}
               type="text"
@@ -44,7 +44,7 @@ class ContactForm extends Component {
           <label className="lable">
             Number
             <input
-              className="contact-inp"
+              className={css.contact_inp}
               onChange={this.hendelChange}
               value={this.state.number}
               type="tel"
@@ -54,7 +54,7 @@ class ContactForm extends Component {
               required
             />
           </label>
-          <button className="sabmit_contact" type="sabmit">
+          <button className={css.sabmit_contact} type="sabmit">
             add contact
           </button>
         </form>
